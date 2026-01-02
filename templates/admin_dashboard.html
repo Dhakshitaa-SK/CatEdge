@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | CATSurge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { margin: 0; font-family: 'Poppins', sans-serif; display: flex; height: 100vh; background: #f4f6f9; }
+        
+        /* Sidebar */
+        .sidebar { width: 250px; background: #1a252f; color: white; display: flex; flex-direction: column; }
+        .logo { padding: 20px; font-size: 24px; font-weight: bold; border-bottom: 1px solid #34495e; }
+        .logo span { color: #4facfe; }
+        .menu { padding: 20px 0; flex: 1; }
+        .menu a { display: block; padding: 15px 20px; color: #b8c7ce; text-decoration: none; transition: 0.3s; }
+        .menu a:hover, .menu a.active { background: #2c3e50; color: white; border-left: 4px solid #4facfe; }
+        .menu i { margin-right: 10px; width: 20px; }
+
+        /* Main Content */
+        .main-content { flex: 1; display: flex; flex-direction: column; }
+        .top-bar { background: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .user-info { display: flex; align-items: center; gap: 15px; }
+        .dashboard-area { padding: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">CAT<span>Edge</span> Admin</div>
+        <div class="menu">
+            <a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-users"></i> Students</a>
+            <a href="#"><i class="fas fa-question-circle"></i> Question Bank</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Mock Tests</a>
+            <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="top-bar">
+            <h3>Overview</h3>
+            <div class="user-info">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user-circle fa-lg"></i>
+                <span>Admin</span>
+                <a href="{{ url_for('logout') }}" style="color: #e74c3c; text-decoration: none; margin-left: 10px;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+
+        <div class="dashboard-area">
+            <h1>Welcome back, Admin!</h1>
+            <p>Manage your students and tests from here.</p>
+        </div>
+    </div>
+
+</body>
+</html>

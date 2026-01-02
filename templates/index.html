@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATSurge | Premier CAT Preparation Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <p><span class="badge-new">NEW</span> <strong>CAT 2026 Achievers Batch</strong> starts Feb 15th! <a href="#">Explore Course <i class="fas fa-arrow-right"></i></a></p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i> 
+                <span><span class="brand-cat">CAT</span><span class="brand-surge">Surge</span></span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#exam-info">Exam Details</a></li>
+                <li><a href="#">Mock Tests</a></li>
+                <li><a href="#">Free Resources</a></li>
+                <li class="nav-item-login"><a href="{{ url_for('login') }}" class="btn-login">Start your Journey</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-wrapper">
+            <div class="hero-content">
+                <span class="tagline"> <i class="fas fa-chart-line"></i> India's Most Analytics-Driven Platform</span>
+                <h1>Crack CAT 2026 with <br> <span class="highlight-blue">Scientific Precision</span></h1>
+                <p>Join the next generation of aspirants using AI-driven mocks and adaptive learning technology. Target 99%ile with a personalized study plan.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary"><i class="fas fa-play-circle"></i> Start Free Mock</a>
+                    <a href="#" class="btn-outline">View Study Plan</a>
+                </div>
+
+                <div class="trust-badges">
+                    <div class="trust-item"><i class="fas fa-check-circle"></i> Real Exam Interface</div>
+                    <div class="trust-item"><i class="fas fa-user-friends"></i> Peer Comparison</div>
+                    <div class="trust-item"><i class="fas fa-star"></i> AI Analysis</div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="countdown-card">
+                    <h3>CAT 2026 Countdown</h3>
+                    <div class="timer">
+                        <div class="time-box"><span>320</span><small>Days</small></div>
+                        <div class="time-box"><span>14</span><small>Hours</small></div>
+                    </div>
+                    <p>Don't wait. Start today.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-resources">
+        <div class="container">
+            <h2 class="section-title">Free Preparation Resources</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="icon-box red"><i class="fas fa-file-pdf"></i></div>
+                    <h4>Previous Papers</h4>
+                    <p>CAT 2017-2025 Solved Papers</p>
+                </div>
+                <div class="resource-card">
+                    <div class="icon-box blue"><i class="fas fa-calculator"></i></div>
+                    <h4>Percentile Predictor</h4>
+                    <p>Check your standing instantly</p>
+                </div>
+                <div class="resource-card">
+                    <div class="icon-box green"><i class="fas fa-book-open"></i></div>
+                    <h4>Formula Book</h4>
+                    <p>Download quant cheat sheets</p>
+                </div>
+                <div class="resource-card">
+                    <div class="icon-box yellow"><i class="fas fa-calendar-check"></i></div>
+                    <h4>Daily Targets</h4>
+                    <p>Free daily practice questions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="exam-info" class="section-exam-info">
+        <div class="container">
+            <div class="info-header">
+                <h2 class="section-title">Know the CAT Exam</h2>
+                <p>Everything you need to know about the Common Admission Test.</p>
+            </div>
+
+            <div class="exam-grid">
+                <div class="exam-card">
+                    <div class="card-header">
+                        <i class="fas fa-user-check"></i> Eligibility Criteria
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Degree:</strong> Bachelor's Degree in any discipline.</li>
+                            <li><strong>Marks:</strong> Min 50% (General/OBC) or 45% (SC/ST/PwD).</li>
+                            <li><strong>Final Year:</strong> Students in final year can also apply.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exam-card">
+                    <div class="card-header">
+                        <i class="fas fa-marker"></i> Marking Scheme
+                    </div>
+                    <div class="card-body">
+                        <div class="marking-box">
+                            <div class="mark-item positive">
+                                <span>+3</span> Correct
+                            </div>
+                            <div class="mark-item negative">
+                                <span>-1</span> Wrong
+                            </div>
+                            <div class="mark-item neutral">
+                                <span>0</span> Skip
+                            </div>
+                        </div>
+                        <p class="note">* No negative marks for TITA questions.</p>
+                    </div>
+                </div>
+
+                <div class="exam-card syllabus-card-wide">
+                    <div class="card-header">
+                        <i class="fas fa-clock"></i> Exam Pattern Overview
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="pattern-table">
+                                <tr>
+                                    <th>Section</th>
+                                    <th>Duration</th>
+                                    <th>No. of Questions (Approx)</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>VARC</strong> (Verbal Ability & Reading Comp)</td>
+                                    <td>40 mins</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DILR</strong> (Data Int. & Logical Reasoning)</td>
+                                    <td>40 mins</td>
+                                    <td>22</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>QA</strong> (Quantitative Ability)</td>
+                                    <td>40 mins</td>
+                                    <td>22</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Exam</strong></td>
+                                    <td><strong>120 mins</strong></td>
+                                    <td><strong>~68 Questions</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-card syllabus-card-wide">
+                    <div class="card-header">
+                        <i class="fas fa-book"></i> Syllabus Overview
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="syllabus-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%;">Section Name</th>
+                                        <th style="width: 45%;">Detailed Topics</th>
+                                        <th style="width: 25%;">High Weightage Areas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="section-name">Verbal Ability & Reading Comprehension</td>
+                                        <td>
+                                            <ul class="table-list">
+                                                <li><strong>Reading Comprehension:</strong> Passages, Tone, Inference</li>
+                                                <li><strong>Verbal Ability:</strong> Para Jumbles, Para Summary, Odd One Out, Sentence Completion</li>
+                                            </ul>
+                                        </td>
+                                        <td><span class="badge-focus">Focus:</span> RC is ~70% of the section.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="section-name">Data Interpretation & Logical Reasoning</td>
+                                        <td>
+                                            <ul class="table-list">
+                                                <li><strong>Data Interpretation:</strong> Tables, Bar/Pie Charts, Caselets</li>
+                                                <li><strong>Logical Reasoning:</strong> Seating Arrangements, Games & Tournaments, Blood Relations</li>
+                                            </ul>
+                                        </td>
+                                        <td><span class="badge-focus">Focus:</span> Selection of sets is key.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="section-name">Quantitative Ability</td>
+                                        <td>
+                                            <ul class="table-list">
+                                                <li><strong>Arithmetic:</strong> Percentages, TSD, Time & Work</li>
+                                                <li><strong>Algebra:</strong> Linear/Quadratic Eq, Logarithms</li>
+                                                <li><strong>Geometry & Modern Math:</strong> Triangles, Probability</li>
+                                            </ul>
+                                        </td>
+                                        <td><span class="badge-focus">Focus:</span> Arithmetic & Algebra cover ~60%.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose CATSurge?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-crosshairs icon"></i>
+                    <h3>Real Exam Interface</h3>
+                    <p>Same interface as the actual CAT exam. Get used to the pressure before the big day.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-pie icon"></i>
+                    <h3>Deep Analytics</h3>
+                    <p>Don't just see your score. See time spent per question and accuracy vs peers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-video icon"></i>
+                    <h3>Video Solutions</h3>
+                    <p>Detailed video explanations for every mock question by expert faculty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-community">
+        <div class="container community-box">
+            <div class="community-content">
+                <h2>Join the Aspirant Community</h2>
+                <p>Discuss doubts, share strategies, and compete with serious aspirants on our dedicated groups.</p>
+                <div class="community-buttons">
+                    <a href="#" class="btn-community telegram"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
+                    <a href="#" class="btn-community whatsapp"><i class="fab fa-whatsapp"></i> Join WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-logo">CAT<span>Surge</span></h3>
+                    <p>Your one-stop destination for CAT, XAT, and OMETs preparation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Mock Test Series</a></li>
+                        <li><a href="#">Sectional Tests</a></li>
+                        <li><a href="#">GD/PI Prep</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CATSurge Learning Systems. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
