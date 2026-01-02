@@ -3,7 +3,7 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from werkzeug.security import generate_password_hash
 
 DB_HOST = "localhost"
-DB_NAME = "catsurge_db"
+DB_NAME = "catedge_db"
 DB_USER = "postgres"
 DB_PASSWORD = "skdn1418"
 DB_PORT = "5432"
@@ -20,7 +20,7 @@ try:
     cursor.close()
     conn.close()
 
-    # Connect to catsurge_db and create users table
+    # Connect to catedge_db and create users table
     conn = psycopg2.connect(host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD, port=DB_PORT)
     cursor = conn.cursor()
     

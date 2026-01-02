@@ -4,11 +4,11 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import psycopg2
 
 app = Flask(__name__)
-app.secret_key = 'catsurge-secret-key-change-in-production'
+app.secret_key = 'catedge-secret-key-change-in-production'
 
 def get_db():
     return psycopg2.connect(
-        host="localhost", database="catsurge_db", user="postgres", 
+        host="localhost", database="catedge_db", user="postgres", 
         password="skdn1418", port="5432"
     )
 
