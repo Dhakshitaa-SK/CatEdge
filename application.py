@@ -13,7 +13,7 @@ def get_db():
     )
 
 login_manager = LoginManager()
-login_manager.init_application(application)
+login_manager.init_app(application)
 login_manager.login_view = 'login'
 
 class User(UserMixin):
