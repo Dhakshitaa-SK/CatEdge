@@ -8,7 +8,7 @@ app.secret_key = 'catedge-secret-key-change-in-production'
 
 def get_db():
     return psycopg2.connect(
-        host="localhost", database="catedge_db", user="postgres", 
+        host="catedge-db.cxgwqaw8y8rv.ap-southeast-2.rds.amazonaws.com", database="postgres", user="postgres", 
         password="skdn1418", port="5432"
     )
 

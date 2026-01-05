@@ -1,29 +1,20 @@
 import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from werkzeug.security import generate_password_hash
 
-DB_HOST = "localhost"
-DB_NAME = "catedge_db"
+DB_HOST = "catedge-db.cxgwqaw8y8rv.ap-southeast-2.rds.amazonaws.com"
+DB_NAME = "postgres"
 DB_USER = "postgres"
 DB_PASSWORD = "skdn1418"
 DB_PORT = "5432"
 
 try:
-    # Create database
-    conn = psycopg2.connect(host=DB_HOST, database="postgres", user=DB_USER, password=DB_PASSWORD, port=DB_PORT)
-    conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+    # Connect to cloud database
+    conn = psycopg2.connect(
+        host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD, port=DB_PORT
+    )
     cursor = conn.cursor()
-    cursor.execute(f"SELECT 1 FROM pg_catalog.pg_database WHERE datname = '{DB_NAME}';")
-    if not cursor.fetchone():
-        cursor.execute(f"CREATE DATABASE {DB_NAME};")
-        print(f"✅ Database '{DB_NAME}' created!")
-    cursor.close()
-    conn.close()
 
-    # Connect to catedge_db and create users table
-    conn = psycopg2.connect(host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD, port=DB_PORT)
-    cursor = conn.cursor()
-    
+    # Create users table if not exists
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS users (
             id SERIAL PRIMARY KEY,
@@ -34,9 +25,9 @@ try:
         );
     """)
     conn.commit()
-    print("✅ Users table created!")
+    print("✅ Users table created or exists!")
 
-    # Create admin user
+    # Create admin user if not exists
     cursor.execute("SELECT id FROM users WHERE email = %s", ('admin@gmail.com',))
     if not cursor.fetchone():
         cursor.execute(
@@ -48,7 +39,7 @@ try:
 
     cursor.close()
     conn.close()
-    print("🎉 Login module ready!")
+    print("🎉 Login module ready on AWS RDS!")
 
 except Exception as e:
     print(f"❌ Error: {e}")
