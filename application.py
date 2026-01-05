@@ -3,8 +3,8 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from werkzeug.security import check_password_hash, generate_password_hash
 import psycopg2
 
-app = Flask(__name__)
-app.secret_key = 'catedge-secret-key-change-in-production'
+application = Flask(__name__)
+application.secret_key = 'catedge-secret-key-change-in-production'
 
 def get_db():
     return psycopg2.connect(
@@ -13,7 +13,7 @@ def get_db():
     )
 
 login_manager = LoginManager()
-login_manager.init_app(app)
+login_manager.init_application(application)
 login_manager.login_view = 'login'
 
 class User(UserMixin):
@@ -32,11 +32,11 @@ def load_user(user_id):
     conn.close()
     return User(u[0], u[1], u[2]) if u else None
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@application.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -66,7 +66,7 @@ def login():
     
     return render_template('login.html')
 
-@app.route('/register', methods=['GET', 'POST'])
+@application.route('/register', methods=['GET', 'POST'])
 def register():
     email = request.args.get('email', '')
     
@@ -97,18 +97,18 @@ def register():
     
     return render_template('register.html', email=email)
 
-@app.route('/dashboard')
+@application.route('/dashboard')
 @login_required
 def dashboard():
     if current_user.role == 'admin':
         return render_template('admin_dashboard.html')
     return render_template('student_dashboard.html')
 
-@app.route('/logout')
+@application.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    application.run(debug=True, port=5000)
